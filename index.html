@@ -52,10 +52,10 @@
             --fdl-light-secondary: #494949;
             --fdl-light-dark-secondary: #292929;
 
-            --fdl-light-background: #494949;
+            /* --fdl-light-background: #494949;
             --fdl-light-dark-background: #3a3a3a;
             --fdl-light-secondary: #ffffff;
-            --fdl-light-dark-secondary: #cccccc;
+            --fdl-light-dark-secondary: #cccccc; */
         }
 
         body, html {
@@ -66,6 +66,7 @@
             margin: 0;
             flex-direction:column; 
         }
+        
     </style>
 </head>
 <body>
@@ -160,6 +161,9 @@
                     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
                     z-index: 1;
                     top: 14.5rem;
+                }
+                .sticky .dropdown-content {
+                    top: 3.4rem;
                 }
 
                 nav ul {
@@ -322,8 +326,14 @@
             #header-text {
                 font-weight: 700;
             }   
+            /* The sticky class is added to the navbar with JS when it reaches its scroll position */
+            .sticky {
+                position: fixed;
+                top: 0;
+                width: 100%;
+            }
         </style>
-        <nav>
+        <nav id="nav">
             <div class="left inner-wrapper">
                 <div id="nav-flag-container"></div>
             </div>
@@ -364,7 +374,18 @@
                 <div id="nav-login"><span>Anmelden<img src="img/body/header/guest.svg" alt="Gast"></span></div>
             </div>
         </nav>
-
+        <script>
+            window.onscroll = function() {stickNav()};
+            var navbar = document.getElementById("nav");
+            var sticky = navbar.offsetTop;
+            function stickNav() {
+                if (window.pageYOffset >= sticky) {
+                    navbar.classList.add("sticky")
+                } else {
+                    navbar.classList.remove("sticky");
+                }
+            }
+        </script>
         <div id="content-wrap">
             <style>
                 main {
@@ -373,38 +394,6 @@
                 }
             </style>
             <main>
-                <br>
-                <br>
-                <br>
-                <br>
-                <br>
-                <br>
-                <br>
-                <br>
-                <br>
-                <br>
-                <br>
-                <br>
-                <br>
-                <br>
-                <br>
-                <br>
-                <br>
-                <br>
-                <br>
-                <br>
-                <br>
-                <br>
-                <br>
-                <br>
-                <br>
-                <br>
-                <br>
-                <br>
-                <br>
-                <br>
-                <br>
-                <br>
                 <br>
                 <br>
                 <br>
